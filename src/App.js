@@ -1,36 +1,38 @@
 import { useState, useEffect, useCallback } from "react";
 
 // ── LINKIT BRAND ─────────────────────────────────────────────────
+// Official LINKIT palette (shared with the LINKIT Security Checklist)
 const BRAND = {
-  blue: "#1A4F8A",
-  blueLight: "#D6E4F0",
-  blueMid: "#2E86C1",
-  accent: "#E8F0F9",
+  blue: "#3973ee",        // linkit-blue
+  blueLight: "#d6e4ff",   // light blue tint
+  blueMid: "#83cff5",     // sky-blue
+  accent: "#eef3ff",      // light blue surface
   white: "#FFFFFF",
-  gray50: "#F5F7FA",
-  gray100: "#E8EEF4",
-  gray300: "#BBCAD8",
-  gray500: "#6B8099",
-  gray700: "#334D66",
-  green: "#2E6B3E",
-  greenLight: "#E8F5ED",
-  purple: "#5B3A8A",
-  purpleLight: "#EDE8F5",
-  text: "#1A2B3C",
-  danger: "#C0392B",
-  dangerLight: "#FDECEA",
+  gray50: "#f4f6fb",      // app background
+  gray100: "#e3e7f0",     // border
+  gray300: "#c7d0e4",     // border-strong
+  gray500: "#6b6878",     // text-muted
+  gray700: "#2a2538",     // midnight-purple (dark text)
+  green: "#00c9d2",       // teal
+  greenLight: "#e6fff5",  // teal tint
+  purple: "#2a2538",      // midnight-purple
+  purpleLight: "#ece9f2", // light purple tint
+  text: "#2a2538",        // midnight-purple
+  danger: "#e03b46",
+  dangerLight: "#ffe9ea",
 };
 
-// ── LINKIT SVG LOGO ───────────────────────────────────────────────
+// ── LINKIT LOGO ───────────────────────────────────────────────────
+const LINKIT_LOGO_URL =
+  "https://www.linkit.nl/app/uploads/2024/04/2026-linkit-logo-rgb-full-colour.png";
+
 function LinkitLogo({ size = 32 }) {
   return (
-    <svg width={size * 3.2} height={size} viewBox="0 0 128 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="40" height="40" rx="6" fill={BRAND.blue} />
-      <path d="M10 30V10h5v16h9v4H10z" fill="white" />
-      <path d="M26 14a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" fill={BRAND.blueMid} />
-      <rect x="23.5" y="15" width="5" height="15" rx="1" fill="white" />
-      <text x="48" y="27" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="18" fill={BRAND.blue}>LINKIT</text>
-    </svg>
+    <img
+      src={LINKIT_LOGO_URL}
+      alt="LINKIT"
+      style={{ height: size, width: "auto", display: "block" }}
+    />
   );
 }
 
@@ -303,7 +305,7 @@ function sectionProgress(answers, section) {
 // ── STYLES ────────────────────────────────────────────────────────
 const S = {
   app: {
-    fontFamily: "Arial, sans-serif",
+    fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
     minHeight: "100vh",
     background: BRAND.gray50,
     color: BRAND.text,
@@ -351,14 +353,14 @@ const S = {
     width: "100%", boxSizing: "border-box",
     padding: "9px 12px", fontSize: 14, borderRadius: 6,
     border: `1px solid ${BRAND.gray300}`, outline: "none",
-    fontFamily: "Arial, sans-serif", color: BRAND.text,
+    fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", color: BRAND.text,
     background: BRAND.white,
   },
   textarea: {
     width: "100%", boxSizing: "border-box",
     padding: "9px 12px", fontSize: 14, borderRadius: 6,
     border: `1px solid ${BRAND.gray300}`, outline: "none",
-    fontFamily: "Arial, sans-serif", color: BRAND.text,
+    fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", color: BRAND.text,
     background: BRAND.white, resize: "vertical", minHeight: 72,
   },
   label: { fontSize: 13, fontWeight: 600, color: BRAND.gray700, marginBottom: 5, display: "block" },
