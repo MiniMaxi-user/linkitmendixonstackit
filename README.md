@@ -26,7 +26,7 @@ vercel
 
 No environment variables needed. All data is stored in the browser (localStorage).
 
-## Project structure
+## Project structuree
 
 ```
 src/
@@ -37,3 +37,4 @@ public/
 vercel.json     ← SPA routing for Vercel
 package.json
 ```
+ 
